@@ -43,22 +43,22 @@ Ref SKUs: https://docs.microsoft.com/en-us/azure/virtual-machines/sizes-b-series
 
 Configuramos el balanceador de carga para el conjunto de las maquinas virtuales
 ```
-#configurar probe
+#Configurar Health probes
 $ az network lb probe create \
-  --lb-name webServerScaleSetLB \
-  --resource-group scalesetrg \
+  --lb-name vmss-webserver-demoLB \
+  --resource-group santi-webserver-demo-recursos \
   --name webServerHealth \
   --port 80 \
   --protocol Http \
   --path /
 
-#configurar reglas de enrutado
+#Configurar reglas de enrutado
 $ az network lb rule create \
-  --resource-group scalesetrg \
+  --resource-group santi-webserver-demo-recursos \
   --name webServerLoadBalancerRuleWeb \
-  --lb-name webServerScaleSetLB \
+  --lb-name vmss-webserver-demoLB \
   --probe-name webServerHealth \
-  --backend-pool-name webServerScaleSetLBBEPool \
+  --backend-pool-name vmss-webserver-demoLBBEPool \
   --backend-port 80 \
   --frontend-ip-name loadBalancerFrontEnd \
   --frontend-port 80 \
