@@ -1,11 +1,11 @@
-##Tutorial de Javascript Node para hacer login mediante Azure AD
+## Tutorial de Javascript Node para hacer login mediante Azure AD
 
-Create an Azure AD application and Web page for the user to sign in and display details
+#### Create an Azure AD application and Web page for the user to sign in and display details
 --------------------------------------------------------------------------------------------------
 Ref: https://docs.microsoft.com/es-es/learn/modules/getting-started-identity/3-exercise-different-token-types
 
 Codigo fuente para archivo **server.js**
-```
+```javascript
 var express = require('express');
 var app = express();
 var morgan = require('morgan');
@@ -30,7 +30,7 @@ console.log('Press CTRL+C to stop the web server...');
 
 
 Codigo fuente para archivo **index.html**
-```
+```html
 <!DOCTYPE html>
 <html>
 <head>
